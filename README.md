@@ -1,484 +1,273 @@
-# GCC Telecom Customer Churn Intelligence & Revenue Protection Platform
-
+# GCC Telecom Customer Intelligence & Revenue Protection Platform
 ## Project Overview
-
-An end-to-end Telecom Customer Churn Prediction, Risk Segmentation, Revenue Protection, and AI-Powered Decision Intelligence Platform built using Data Engineering, Machine Learning, Generative AI, Databricks, Microsoft Fabric, and Streamlit.
-
-The platform enables telecom executives, customer retention teams, and revenue managers to identify customers at risk of churn, estimate revenue exposure, prioritize retention actions, and generate AI-powered business recommendations.
-
----
-
+An end-to-end Telecom Customer Intelligence Platform built using Databricks, Lakeflow Designer, Machine Learning, Streamlit, and Generative AI.
+The platform helps telecom operators identify high-risk customers, protect revenue, improve retention strategies, and provide executive-level business intelligence through interactive dashboards and AI-powered recommendations.
+________________________________________
 # Business Problem
-
-Telecom companies lose significant revenue due to customer churn.
-
-Traditional reporting provides historical insights but does not proactively identify:
-
-* Which customers are likely to churn
-* How much revenue is at risk
-* Which customer segments require intervention
-* What actions should be taken to reduce churn
-
-This project addresses those challenges through predictive analytics, customer intelligence, revenue protection, and AI-powered recommendations.
-
----
-
-# Project Objectives
-
-* Predict customer churn probability
-* Identify high-risk customers
-* Calculate customer health scores
-* Estimate revenue at risk
-* Segment customers by business risk
-* Generate executive-level business insights
-* Provide AI-powered recommendations for retention and revenue protection
-
----
-
-# Technology Stack
-
-## Data Engineering
-
-* Microsoft Fabric
-* Databricks
-* Lakehouse Architecture
-* Databricks Lakeflow Designer
-* Delta Tables
-
-## Data Analysis
-
-* Python
-* Pandas
-* NumPy
-
-## Data Visualization
-
-* Plotly
-* Streamlit
-
-## Machine Learning
-
-* Scikit-Learn
-* Logistic Regression
-
-## Generative AI
-
-* Groq API
-* Llama 3.3 70B Versatile
-* AI Executive Advisor
-* AI Customer Copilot
-* AI Revenue Protection Advisor
-
----
-
-# Dataset Overview
-
-Telecom customer dataset containing:
-
-* Customer Demographics
-* Customer Contracts
-* Service Usage
-* Billing Information
-* Churn Information
-* Revenue Information
-* Customer Engagement Metrics
-* Network Quality Metrics
-
-### Original Features
-
-* customer_id
-* country
-* city
-* gender
-* senior_citizen
-* partner
-* dependents
-* tenure_months
-* phone_service
-* multiple_lines
-* internet_service
-* online_security
-* online_backup
-* device_protection
-* tech_support
-* streaming_tv
-* streaming_movies
-* contract
-* paperless_billing
-* payment_method
-* monthly_charge
-* total_charges
-* churn_label
-* churn_value
-* churn_score
-* cltv
-* churn_reason
-* customer_type
-* complaint_count
-* payment_delay_days
-* roaming_usage
-* app_logins
-* network_quality_score
-* avg_monthly_data_usage_gb
-* arpu
-
----
-
-# Feature Engineering
-
-The following business features were created:
-
-## Revenue Segment
-
-Customers categorized into:
-
-* Low Revenue
-* Medium Revenue
-* High Revenue
-
-Based on CLTV values.
-
----
-
-## Tenure Segment
-
-Customers categorized into:
-
-* New Customer
-* Growing Customer
-* Loyal Customer
-
-Based on tenure months.
-
----
-
-## Customer Health Score
-
-Custom business metric created using:
-
-* Complaints
-* Payment Delays
-* App Engagement
-* Network Quality
-
-Used to measure overall customer health.
-
----
-
-## Risk Segment
-
-Customers categorized as:
-
-* High Risk
-* Medium Risk
-* Low Risk
-
-Based on churn probability and customer behavior.
-
----
-
-## Revenue At Risk
-
-Estimated using:
-
-Revenue At Risk = CLTV × Risk Weight
-
-Risk Weights:
-
-* High Risk = 60%
-* Medium Risk = 30%
-* Low Risk = 10%
-
----
-
-# Machine Learning Pipeline
-
-## Model Used
-
-Logistic Regression
-
-### Why Logistic Regression?
-
-* Highly interpretable
-* Fast training
-* Strong baseline model
-* Suitable for churn prediction
-
----
-
-## Model Output
-
-The model predicts:
-
-* Churn Probability
-* Churn Risk Classification
-
-for every customer.
-
----
-
-# Databricks Lakehouse Architecture
-
-Implemented using Medallion Architecture.
-
-## Bronze Layer
-
-Raw telecom customer data.
-
-Table:
-
-telecom_data_raw
-
-Purpose:
-
-* Raw data ingestion
-* Source of truth
-
----
-
-## Silver Layer
-
-Cleaned and transformed data.
-
-Table:
-
-silver_gcc_data
-
-Transformations:
-
-* Null handling
-* Duplicate removal
-* Feature engineering
-* Data quality improvements
-
----
-
-## Gold Layer
-
-Business-ready analytics layer.
-
-Table:
-
-gold_gcc_data
-
-Contains:
-
-* Churn Intelligence
-* Revenue Analytics
-* Customer Intelligence
-* Executive KPIs
-
----
-
-# Databricks Lakeflow Designer
-
-Visual data pipeline created using:
-
-Bronze Layer
+- Telecom operators face significant challenges in:
+  •	Customer churn
+  •	Revenue leakage
+  •	Declining customer engagement
+  •	Delayed retention actions
+  •	Lack of executive visibility
+- This project provides a unified analytics platform to:
+  •	Predict customer churn risk
+  •	Identify revenue at risk
+  •	Monitor customer health
+  •	Enable proactive retention strategies
+  •	Deliver executive decision support through AI-generated insights
+________________________________________
+# Solution Architecture
+Raw Telecom Dataset ↓ Databricks Lakehouse
+Bronze Layer (telecom_data_raw)
 ↓
-Silver Layer
+Silver Layer (silver_gcc_data)
+↓
+Feature Engineering
+•	Customer Health Score
+•	Revenue At Risk
+•	Revenue Segment
+•	Tenure Segment
+•	Risk Classification
 ↓
 Gold Layer
-
-Pipeline automates data transformation across the Medallion Architecture.
-
----
-
-# Streamlit Application
-
-Interactive telecom analytics platform.
-
----
-
-## Home Page
-
-Portfolio overview including:
-
-* Total Customers
-* High Risk %
-* Revenue At Risk
-* Average CLTV
-* Customer Health Score
-
----
-
-## Customer Insights
-
-360-degree customer intelligence view.
-
-Includes:
-
-* Customer Profile
-* Churn Prediction
-* Risk Drivers
-* Revenue Exposure
-* Customer Health Score
-* AI Customer Copilot
-
----
-
-## Executive Analytics Dashboard
-
-Enterprise-level dashboard containing:
-
-### Risk Analytics
-
-* Risk Distribution
-* Risk Rate by Country
-* Risk Rate by Customer Type
-
-### Customer Analytics
-
-* Customer Concentration Analysis
-* Customer Segment Analysis
-* Health Score Analysis
-
-### Revenue Analytics
-
-* Revenue Exposure
-* Revenue by Country
-* Revenue at Risk
-
-### AI Executive Advisor
-
-Generative AI powered portfolio intelligence including:
-
-* Executive Summary
-* Risk Intelligence
-* Customer Intelligence
-* Revenue Intelligence
-* Strategic Recommendations
-
----
-
-## Risk Segmentation
-
-Portfolio-wide risk analysis.
-
-Includes:
-
-* High Risk Customers
-* Medium Risk Customers
-* Low Risk Customers
-* Risk Trends
-* Risk Distribution
-
----
-
-## Revenue Protection
-
-Revenue-focused business intelligence.
-
-Includes:
-
-* Revenue Exposure Analysis
-* High Value Customers at Risk
-* Revenue Concentration Analysis
-* Revenue Recovery Opportunities
-
-### AI Revenue Protection Advisor
-
-Provides:
-
-* Revenue Risk Assessment
-* Revenue Recovery Strategies
-* Retention Prioritization
-* Business Recommendations
-
----
-
-## Model Performance
-
-Machine Learning model evaluation.
-
-Metrics include:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-
-Visualization includes:
-
-* Confusion Matrix
-* Model Performance Dashboard
-
----
-
-# AI Capabilities
-
-## AI Customer Copilot
-
-Analyzes individual customers and provides:
-
-* Risk Analysis
-* Retention Strategy
-* Revenue Protection Actions
-* Next Best Actions
-
----
-
-## AI Executive Advisor
-
-Analyzes entire telecom portfolio and generates:
-
-* Executive Summary
-* Portfolio Risk Assessment
-* Revenue Intelligence
-* Strategic Recommendations
-
----
-
-## AI Revenue Advisor
-
-Provides:
-
-* Revenue Protection Strategy
-* Revenue Recovery Opportunities
-* Immediate Revenue Actions
-
----
-
-# Business Value
-
-The platform enables organizations to:
-
-* Reduce customer churn
-* Protect recurring revenue
-* Improve customer retention
-* Prioritize retention campaigns
-* Optimize customer engagement
-* Generate executive-level business insights
-* Support data-driven decision making
-
----
-
+•	gold_customer_master
+•	gold_customer_churn
+•	gold_customer_360
+•	gold_retention
+•	gold_revenue_summary
+↓
+Streamlit Analytics Platform
+↓
+AI Copilot & Executive Intelligence
+________________________________________
+# Technology Stack
+Data Engineering
+•	Databricks Lakehouse
+•	Databricks Lakeflow Designer
+•	Delta Tables
+•	PySpark
+•	Pandas
+Machine Learning
+•	Scikit-Learn
+•	Logistic Regression
+•	Churn Risk Scoring
+Dashboarding
+•	Streamlit
+•	Plotly
+•	Python
+AI
+•	Groq API
+•	Llama 3.3 70B
+•	Executive AI Advisor
+•	Revenue Protection AI Copilot
+•	Customer Retention AI Assistant
+________________________________________
+# Dataset Information
+Customer-level telecom dataset containing:
+•	Customer Demographics
+•	Service Information
+•	Contract Details
+•	Billing Information
+•	Churn Information
+•	Customer Lifetime Value
+•	Complaint History
+•	Payment Delays
+•	Network Quality Metrics
+•	App Engagement Metrics
+•	Roaming Usage
+Dataset Size:
+•	7,043 Customers
+•	Multi-country GCC telecom portfolio
+Countries Included:
+•	Saudi Arabia
+•	UAE
+•	Oman
+•	Bahrain
+•	Kuwait
+•	Qatar
+________________________________________
+# Medallion Architecture
+Bronze Layer
+Table:
+telecom_data_raw
+Purpose:
+•	Raw ingestion layer
+•	Original source data
+•	No transformations
+________________________________________
+# Silver Layer
+Table:
+silver_gcc_data
+Transformations:
+•	Data quality checks
+•	Missing value handling
+•	Standardization
+•	Data cleansing
+•	Feature preparation
+________________________________________
+# Gold Layer
+gold_customer_master
+Master customer profile table.
+Contains:
+•	Customer demographics
+•	Contract information
+•	Customer segmentation
+________________________________________
+gold_customer_churn
+Churn-focused customer table.
+Contains:
+•	Churn indicators
+•	Churn reasons
+•	Risk classifications
+________________________________________
+gold_customer_360
+Executive customer intelligence table.
+Contains:
+•	Customer profile
+•	CLTV
+•	Health score
+•	Revenue risk
+•	Risk segment
+________________________________________
+gold_retention
+Retention-focused customer table.
+Contains:
+•	Engagement metrics
+•	Complaints
+•	Payment behavior
+•	Retention indicators
+________________________________________
+gold_revenue_summary
+Aggregated executive revenue table.
+Contains:
+•	Revenue by country
+•	Revenue by customer type
+•	Revenue exposure
+•	Customer distribution
+________________________________________
+# Feature Engineering
+Customer Health Score
+Custom metric developed to evaluate overall customer health.
+Factors considered:
+•	Complaints
+•	Payment delays
+•	Network quality
+•	App engagement
+•	Usage behavior
+Purpose:
+•	Early risk detection
+•	Customer prioritization
+________________________________________
+Risk Segmentation
+Customers classified into:
+High Risk
+Immediate retention intervention required.
+Medium Risk
+Monitor and engage.
+Low Risk
+Healthy customer base.
+________________________________________
+Revenue At Risk
+Business metric estimating potential revenue loss from customer churn.
+Used to:
+•	Prioritize retention budgets
+•	Quantify financial exposure
+•	Support executive decision making
+________________________________________
+# Streamlit Analytics Platform
+The solution includes a fully interactive Streamlit application.
+Modules:
+Home Dashboard
+Executive KPI overview.
+Metrics:
+•	Total Customers
+•	Average CLTV
+•	Customer Health Score
+•	High Risk Customers
+•	Revenue At Risk
+•	Potential Revenue Recovery
+________________________________________
+# Executive Analytics Dashboard
+Executive-level business intelligence.
+Features:
+•	Portfolio risk analysis
+•	Revenue exposure analysis
+•	Country-level risk monitoring
+•	Customer-type risk assessment
+•	AI Executive Advisor
+________________________________________
+Customer Insights
+360-degree customer intelligence.
+Features:
+•	Customer profile
+•	Customer health score
+•	Churn risk analysis
+•	Customer segmentation
+•	AI Customer Copilot
+________________________________________
+Revenue Protection Dashboard
+Revenue-risk management module.
+Features:
+•	Revenue exposure tracking
+•	High-value customer monitoring
+•	Revenue protection opportunities
+•	AI Revenue Advisor
+________________________________________
+AI Recommendations
+Generative AI-powered telecom consultant.
+Capabilities:
+•	Customer churn analysis
+•	Retention strategy generation
+•	Revenue protection recommendations
+•	Next-best-action suggestions
+•	Executive summaries
+Powered by:
+•	Groq API
+•	Llama 3.3 70B
+________________________________________
+# Key Business Insights Generated
+The platform enables identification of:
+•	High-risk customer segments
+•	Revenue leakage opportunities
+•	Customer engagement issues
+•	Retention priorities
+•	Country-level churn exposure
+•	Customer-type performance
+________________________________________
+# Business Impact
+Potential outcomes include:
+•	Reduced customer churn
+•	Improved retention campaigns
+•	Better revenue protection
+•	Increased customer lifetime value
+•	Faster executive decision making
+•	Enhanced customer experience
+________________________________________
+# Project Highlights
+✔ End-to-End Telecom Analytics Solution
+✔ Databricks Lakehouse Architecture
+✔ Lakeflow Designer Pipeline
+✔ Medallion Data Architecture
+✔ Customer 360 Intelligence
+✔ Revenue Protection Analytics
+✔ AI-Powered Executive Advisor
+✔ Interactive Streamlit Dashboards
+✔ Business-Oriented KPI Framework
+✔ Recruiter-Friendly Portfolio Project
+________________________________________
 # Future Enhancements
+•	Real-time streaming ingestion
+•	MLflow model deployment
+•	Automated model retraining
+•	Customer propensity modeling
+•	GenAI chatbot integration
+•	Databricks Model Serving
+•	Real-time churn monitoring
+________________________________________
+Author
+Naaz
+Computer Science (AI & ML) Graduate
+Specialization: Data Analytics, Machine Learning, Business Intelligence, Databricks, Power BI, Python
 
-* Real-time streaming data
-* Automated retraining pipeline
-* Customer lifetime value prediction
-* Explainable AI (XAI)
-* Recommendation Engine
-* Customer Next Best Action Model
-* Power BI Integration
-* Azure Deployment
-* Enterprise CI/CD Pipeline
 
----
-
-# Author
-
-Naaz Hafiz Mulla
-
-Computer Science (AI & ML)
-Honors in Data Science
-
-Specialization Areas:
-
-* Data Analytics
-* Data Science
-* Machine Learning
-* Business Intelligence
-* Telecom Analytics
-* AI-Powered Decision Intelligence
