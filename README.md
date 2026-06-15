@@ -3,9 +3,9 @@
 An end-to-end Telecom Customer Intelligence Platform built using Databricks, Lakeflow Designer, Machine Learning, Streamlit, and Generative AI.
 The platform helps telecom operators identify high-risk customers, protect revenue, improve retention strategies, and provide executive-level business intelligence through interactive dashboards and AI-powered recommendations.
 ________________________________________
-# Business Problem
+## Business Problem
 - Telecom operators face significant challenges in:
-  •	Customer churn
+   * Customer churn
   •	Revenue leakage
   •	Declining customer engagement
   •	Delayed retention actions
