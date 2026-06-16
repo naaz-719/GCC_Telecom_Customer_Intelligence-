@@ -1,4 +1,4 @@
-![background].(screenshots/bg.png)
+![background]_(screenshots/bg.png)
 
 # GCC Telecom Customer Intelligence & Revenue Protection Platform
 ## Project Overview
