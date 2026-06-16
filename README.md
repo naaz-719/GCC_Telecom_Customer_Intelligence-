@@ -1,4 +1,5 @@
-!(screenshots/bg.png)
+![background](screenshots/bg.png)
+
 # GCC Telecom Customer Intelligence & Revenue Protection Platform
 ## Project Overview
 An end-to-end Telecom Customer Intelligence Platform built using Databricks, Lakeflow Designer, Machine Learning, Streamlit, and Generative AI.
