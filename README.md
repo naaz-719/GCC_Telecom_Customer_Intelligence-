@@ -154,6 +154,8 @@ Contains:
   * Complaints
   * Payment behavior
   * Retention indicators
+
+![Lakeflow Pipeline](screenshots/pipeline.png)
 ________________________________________
 *gold_revenue_summary*
 Aggregated executive revenue table.
