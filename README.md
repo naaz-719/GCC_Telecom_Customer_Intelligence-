@@ -289,7 +289,7 @@ The dashboards provide business stakeholders with real-time visibility into cust
 
 Key capabilities include:
 
-  - Executive KPI Monitoring   ![Lakeflow Pipeline](screenshots/pipeline.png)
+  - Executive KPI Monitoring   
   - Customer Segmentation Analysis
   - Churn Trend Analysis
   - Revenue Intelligence
@@ -299,6 +299,10 @@ Key capabilities include:
   - Retention Opportunity Identification
 
 The Power BI layer complements the Streamlit application by providing interactive business reporting and executive-level decision support.
+![Executive Overview](screenshots/Executive_Overview.png)
+![Customer Experience](screenshots/Customer_Experience.png)
+![Churn Analysis](screenshots/Churn_analysis.png)
+![Recommendations](screenshots/Recommendations.png)
   
 ________________________________________
 # Future Enhancements
