@@ -107,7 +107,7 @@ ________________________________________
 ________________________________________
 ## Medallion Architecture
 
-Bronze Layer
+#### Bronze Layer
 Table:
 telecom_data_raw
 Purpose:
@@ -115,7 +115,7 @@ Purpose:
   * Original source data
   * No transformations
 ________________________________________
-## Silver Layer
+#### Silver Layer
 Table:
 silver_gcc_data
 Transformations:
@@ -125,7 +125,7 @@ Transformations:
 •	Data cleansing
 •	Feature preparation
 ________________________________________
-## Gold Layer
+#### Gold Layer
 *gold_customer_master*
 Master customer profile table.
 Contains:
@@ -166,6 +166,9 @@ Contains:
   * Revenue by customer type
   * Revenue exposure
   * Customer distribution
+
+
+![Lakeflow Pipeline](screenshots/pipeline.png)
 ________________________________________
 ## Feature Engineering
 Customer Health Score
@@ -276,6 +279,27 @@ ________________________________________
   ✔ Interactive Streamlit Dashboards
   ✔ Business-Oriented KPI Framework
   ✔ Recruiter-Friendly Portfolio Project
+
+________________________________________
+## Power BI Business Intelligence Dashboards
+
+In addition to the Streamlit application, interactive Power BI dashboards were developed to support executive reporting, customer analytics, churn monitoring, and revenue intelligence.
+
+The dashboards provide business stakeholders with real-time visibility into customer behavior, revenue exposure, churn risk, and portfolio performance.
+
+Key capabilities include:
+
+  - Executive KPI Monitoring   ![Lakeflow Pipeline](screenshots/pipeline.png)
+  - Customer Segmentation Analysis
+  - Churn Trend Analysis
+  - Revenue Intelligence
+  - Customer Health Monitoring
+  - Risk Distribution Analysis
+  - Country-Level Performance Tracking
+  - Retention Opportunity Identification
+
+The Power BI layer complements the Streamlit application by providing interactive business reporting and executive-level decision support.
+  
 ________________________________________
 # Future Enhancements
   *	Real-time streaming ingestion
